@@ -6,9 +6,9 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = () => {
     return {
         output: {
-            chunkFilename: '[id].[name].[chunkhash].chunk.js',
-            filename: '[id].[name].[chunkhash].js',
-            publicPath: '/build'
+            chunkFilename: '../build/[id].[name].[chunkhash].chunk.js',
+            filename: '../build/[id].[name].[chunkhash].js',
+            publicPath: '/'
         },
 
         optimization: {
