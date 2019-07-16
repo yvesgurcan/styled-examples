@@ -34,6 +34,7 @@ export default class Home extends Component {
                 <LinkItem to="/sassy">Sassy component</LinkItem>
                 <LinkItem to="/animated">Animated component</LinkItem>
                 <LinkItem to="/responsive">Responsive component</LinkItem>
+                <LinkItem to="/props">Component with props</LinkItem>
             </LinkList>
         );
     }

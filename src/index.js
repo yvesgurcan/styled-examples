@@ -15,6 +15,7 @@ import ExtendingStyles from './ExtendingStyles';
 import Sassy from './Sassy';
 import Animated from './Animated';
 import Responsive from './Responsive';
+import Props from './Props';
 
 export const Root = styled.div`
     @font-face {
@@ -36,6 +37,7 @@ ReactDOM.render(
                     <Route path="/sassy" exact component={Sassy} />
                     <Route path="/animated" exact component={Animated} />
                     <Route path="/responsive" exact component={Responsive} />
+                    <Route path="/props" exact component={Props} />
                     <Route path="/" exact component={Home} />
                     <Route path="/" component={NotFound} />
                 </Switch>

@@ -3,14 +3,12 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-module.exports = env => {
-    const { publicPath = '/dist' } = env;
-
+module.exports = () => {
     return {
         output: {
             chunkFilename: '[id].[name].[chunkhash].chunk.js',
             filename: '[id].[name].[chunkhash].js',
-            publicPath
+            publicPath: '/build'
         },
 
         optimization: {
