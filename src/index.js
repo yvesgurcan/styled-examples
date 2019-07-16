@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Switch } from 'react-router';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { HashRouter, Route } from 'react-router-dom';
 import styled from 'styled-components';
 
 import Nav from './Nav';
@@ -27,12 +27,13 @@ export const Root = styled.div`
     }
 
     font-family: Museo Sans Rounded;
+    font-size: 26px;
     padding-left: 60px;
     padding-right: 60px;
 `;
 
 ReactDOM.render(
-    <BrowserRouter>
+    <HashRouter>
         <Root>
             <Main>
                 <Switch>
@@ -52,6 +53,6 @@ ReactDOM.render(
             </Main>
             <Nav />
         </Root>
-    </BrowserRouter>,
+    </HashRouter>,
     document.getElementById('app')
 );
