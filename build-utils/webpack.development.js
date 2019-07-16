@@ -4,7 +4,7 @@ const webpack = require('webpack');
 const WriteFilePlugin = require('write-file-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-module.exports = env => {
+module.exports = () => {
     return {
         devServer: {
             hot: true,
