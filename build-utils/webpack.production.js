@@ -2,20 +2,14 @@ const _ = require('lodash');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const configLoader = require('../config/configLoader');
-
-const configuration = configLoader.getConfig();
-const prodConfigToUse = _.get(configuration, 'prod', {});
-const stageConfigToUse = _.get(configuration, 'stage', {});
-const qaConfigToUse = _.get(configuration, 'qa', {});
 
 module.exports = env => {
-    const { publicPath = '/assets/' } = env;
+    const { publicPath = '/' } = env;
 
     return {
         output: {
             chunkFilename: '[id].[name].[chunkhash].chunk.js',
-            filename: '[id].[name].[chunkhash].js',
+            filename: './dist/[id].[name].[chunkhash].js',
             publicPath
         },
 
@@ -46,18 +40,7 @@ module.exports = env => {
             }),
             new HtmlWebpackPlugin({
                 template: './src/index.html',
-                filename: 'index.prod.html',
-                configJson: JSON.stringify(prodConfigToUse)
-            }),
-            new HtmlWebpackPlugin({
-                template: './src/index.html',
-                filename: 'index.stage.html',
-                configJson: JSON.stringify(stageConfigToUse)
-            }),
-            new HtmlWebpackPlugin({
-                template: './src/index.html',
-                filename: 'index.qa.html',
-                configJson: JSON.stringify(qaConfigToUse)
+                filename: '../index.html'
             })
         ]
     };

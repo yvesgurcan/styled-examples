@@ -3,21 +3,8 @@ const path = require('path');
 const webpack = require('webpack');
 const WriteFilePlugin = require('write-file-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const configLoader = require('../config/configLoader');
 
-module.exports = (env) => {
-    const configuration = configLoader.getConfig();
-    const configEnv = _.get(env, 'config', 'local');
-    const configToUse = _.get(configuration, configEnv, {});
-
-    const envPrefixes = {
-        production: '',
-        qa: 'qa-',
-        stage: 'stage-',
-        local: 'qa-'
-    };
-    const envPrefix = envPrefixes[env.config] || envPrefixes.qa;
-
+module.exports = env => {
     return {
         devServer: {
             hot: true,
@@ -29,10 +16,10 @@ module.exports = (env) => {
                     secure: false
                 },
                 '/public/*': {
-                  target: 'http://localhost:3000/',
-                  secure: false
+                    target: 'http://localhost:3000/',
+                    secure: false
                 }
-              }
+            }
         },
 
         output: {
@@ -53,8 +40,7 @@ module.exports = (env) => {
             new webpack.NamedModulesPlugin(),
             new HtmlWebpackPlugin({
                 template: path.resolve(__dirname, '../src/index.html'),
-                filename: './index.html',
-                configJson: JSON.stringify(configToUse)
+                filename: './index.html'
             })
         ],
         devtool: 'inline-source-map'
