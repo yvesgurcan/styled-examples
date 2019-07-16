@@ -4,7 +4,6 @@ import styled from 'styled-components';
 
 const LinkList = styled.div`
     border-top: 1px solid gray;
-    margin-top: 15px;
     padding-top: 15px;
     display: flex;
     justify-content: center;
@@ -34,7 +33,10 @@ export default class Home extends Component {
                 <LinkItem to="/sassy">Sassy component</LinkItem>
                 <LinkItem to="/animated">Animated component</LinkItem>
                 <LinkItem to="/responsive">Responsive component</LinkItem>
+                <LinkItem to="/attributes">HTML attributes</LinkItem>
                 <LinkItem to="/props">Component with props</LinkItem>
+                <LinkItem to="/global">Global style component</LinkItem>
+                <LinkItem to="/theme">Theming</LinkItem>
             </LinkList>
         );
     }

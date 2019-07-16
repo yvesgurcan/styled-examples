@@ -2,14 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Root = styled.div`
-    min-height: calc(100vh - 250px);
+    min-height: calc(100vh - 300px);
 `;
 
 const Title = styled.div`
     border-bottom: 1px solid gray;
     margin-top: 15px;
     padding-top: 15px;
-    margin-bottom: 15px;
+    margin-bottom: 50px;
     padding: 50px;
     text-align: center;
     display: flex;

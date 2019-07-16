@@ -15,7 +15,10 @@ import ExtendingStyles from './ExtendingStyles';
 import Sassy from './Sassy';
 import Animated from './Animated';
 import Responsive from './Responsive';
+import Attributes from './Attributes';
 import Props from './Props';
+import Global from './Global';
+import Theme from './Theme';
 
 export const Root = styled.div`
     @font-face {
@@ -24,6 +27,8 @@ export const Root = styled.div`
     }
 
     font-family: Museo Sans Rounded;
+    padding-left: 60px;
+    padding-right: 60px;
 `;
 
 ReactDOM.render(
@@ -37,7 +42,10 @@ ReactDOM.render(
                     <Route path="/sassy" exact component={Sassy} />
                     <Route path="/animated" exact component={Animated} />
                     <Route path="/responsive" exact component={Responsive} />
+                    <Route path="/attributes" exact component={Attributes} />
                     <Route path="/props" exact component={Props} />
+                    <Route path="/global" exact component={Global} />
+                    <Route path="/theme" exact component={Theme} />
                     <Route path="/" exact component={Home} />
                     <Route path="/" component={NotFound} />
                 </Switch>

@@ -9,6 +9,7 @@ export const Input = styled.input`
 
     width: 100%;
 
+    // You can define your component-specific breakpoints right here
     @media (min-width: 768px) {
         width: 50%;
     }
