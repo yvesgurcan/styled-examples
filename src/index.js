@@ -30,6 +30,10 @@ export const Root = styled.div`
   font-size: 30px;
   padding-left: 60px;
   padding-right: 60px;
+
+  input {
+    margin: 10px;
+  }
 `;
 
 ReactDOM.render(
