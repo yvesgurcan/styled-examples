@@ -1,5 +1,5 @@
 # styled-examples
-Examples of styled components
+Examples of styled components.
 
 ## Tips
 
