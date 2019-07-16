@@ -2,57 +2,57 @@ import React, { Fragment } from 'react';
 import styled from 'styled-components';
 
 export default () => (
-    <Fragment>
-        <div>
-            You can nest rules for your CSS selectors in your styled components,
-            use the "&" reference like you would in SASS.
+  <Fragment>
+    <div>
+      You can nest rules for your CSS selectors in your styled components, use
+      the "&" reference like you would in SASS.
+    </div>
+    <List>
+      <li>This is a list item.</li>
+      <li>
+        This item, like the first one, is styled from the parent component (a ul
+        tag wrapped in a styled component).
+      </li>
+      <li className="grey">
+        This item has a "grey" className. The appropriate scoped styles are
+        applied to it.
+      </li>
+      <li>
+        Another list item.
+        <div className="grey">
+          This is not grey despite the className because "grey" only applies to
+          li, not divs.
         </div>
-        <List>
-            <li>This is a list item.</li>
-            <li>
-                This item, like the first one, is styled from the parent
-                component (a ul tag wrapped in a styled component).
-            </li>
-            <li className="red">
-                This item has a className. The appropriate scoped styles are
-                applied to it.
-            </li>
-            <li>
-                Another list item.
-                <div className="red">
-                    This is not red despite the className because "red" only
-                    applies to li, not divs.
-                </div>
-                <div className="blue">
-                    This, however, is blue, because there's no "&" on the rule
-                    applied to the "blue" className.
-                </div>
-            </li>
-        </List>
-        <ul>
-            <li className="red blue">
-                This list item is neither red nor blue, despite its className.
-                It's outside of the scope of the styled component.
-            </li>
-        </ul>
-    </Fragment>
+        <div className="orange">
+          This, however, is orange, because there's no "&" on the rule applied
+          to the "orange" className.
+        </div>
+      </li>
+    </List>
+    <ul>
+      <li className="grey orange">
+        This list item is neither grey nor orange, despite its className. It's
+        outside of the scope of the styled component.
+      </li>
+    </ul>
+  </Fragment>
 );
 
 export const List = styled.ul`
-    // Nested selector
-    li {
-        background: rgb(0, 200, 0);
-        padding: 5px;
-        margin: 2px;
+  // Nested selector
+  li {
+    background: rgb(0, 180, 240);
+    padding: 5px;
+    margin: 2px;
 
-        // Only applies to li.red
-        &.red {
-            background: red;
-        }
-
-        // Applies to any element with that className in li
-        .blue {
-            background: rgb(125, 125, 255);
-        }
+    // Only applies to li.red
+    &.grey {
+      background: grey;
     }
+
+    // Applies to any element with that className in li
+    .orange {
+      background: orange;
+    }
+  }
 `;

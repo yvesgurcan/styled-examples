@@ -8,11 +8,11 @@ export const Radio = styled.input.attrs({ type: 'radio' })``;
 export const FileInput = styled.input.attrs({ type: 'file' })``;
 
 export default () => (
-    <Fragment>
-        <p>You can set default attributes to your styled components.</p>
-        <TextInput />
-        <Checkbox />
-        <Radio />
-        <FileInput />
-    </Fragment>
+  <Fragment>
+    <p>You can set default attributes to your styled components.</p>
+    <TextInput />
+    <Checkbox />
+    <Radio />
+    <FileInput />
+  </Fragment>
 );
