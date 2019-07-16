@@ -10,7 +10,7 @@ export default () => (
         <List>
             <li>This is a list item.</li>
             <li>
-                The item, like the first one, is styled from the parent
+                This item, like the first one, is styled from the parent
                 component (a ul tag wrapped in a styled component).
             </li>
             <li className="red">
@@ -24,14 +24,15 @@ export default () => (
                     applies to li, not divs.
                 </div>
                 <div className="blue">
-                    This, however, is blue, because there's no "&" on that rule.
+                    This, however, is blue, because there's no "&" on the rule
+                    applied to the "blue" className.
                 </div>
             </li>
         </List>
         <ul>
             <li className="red blue">
-                This list item is not red or blue, despite its className. It's
-                outside of the scope of the styled component.
+                This list item is neither red nor blue, despite its className.
+                It's outside of the scope of the styled component.
             </li>
         </ul>
     </Fragment>
