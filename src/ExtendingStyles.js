@@ -9,7 +9,15 @@ export const BaseButton = styled.button`
     border: 2px solid black;
     margin: 10px;
     border-radius: 15px;
-    font-size: 14px;
+    font-size: 20px;
+
+    &:hover {
+        filter: brightness(0.85);
+    }
+
+    &:active {
+        filter: brightness(1.05);
+    }
 `;
 
 // Once you have defined a styled component, you can use it as a base for other styled components by passing it as an argument to "styled".
