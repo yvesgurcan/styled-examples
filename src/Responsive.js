@@ -26,9 +26,9 @@ export const Input = styled.input`
 export default () => (
   <div>
     <p>
-      This styled component has breaking points. Its width will change at 768px,
+      This input component has breaking points. Its width will change at 768px,
       1024px, and 1200px.
     </p>
-    <Input value="Some value here" />
+    <Input value="Some value" />
   </div>
 );

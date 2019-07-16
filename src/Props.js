@@ -3,11 +3,16 @@ import styled from 'styled-components';
 
 const ANSWER = 2006;
 
+const Question = styled.div`
+  padding-top: 15px;
+`;
+
 const CorrectAnswer = styled.div`
   margin: 30px;
   padding: 20px;
   cursor: pointer;
   border-radius: 18px;
+  // The color of the border and the background depend on the value of the "correct" prop.
   border: 1px solid ${props => (props.correct ? 'green' : 'black')};
   background: ${props => props.correct && 'lightgreen'};
 `;
@@ -22,6 +27,7 @@ const WrongAnswer = styled.div`
 `;
 
 const Explanation = styled.p`
+  // The explanation only appears if the selected answer is the right answer.
   display: ${props => (props.selectedAnswer === ANSWER ? 'block' : 'none')};
 `;
 
@@ -33,7 +39,8 @@ export default class Quiz extends Component {
   render() {
     return (
       <Fragment>
-        <div>In what year did Amazon launch AWS?</div>
+        {/* The name of the components helps with the readability of the code */}
+        <Question>In what year did Amazon launch AWS?</Question>
         {[2016, 1995, 2008, 2006].map(year =>
           year === ANSWER ? (
             <CorrectAnswer

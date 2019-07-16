@@ -13,9 +13,9 @@ const LinkList = styled.div`
 
 const LinkItem = styled(Link)`
   display: block;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 8px;
   text-decoration: none;
   color: #07a1d1;
 

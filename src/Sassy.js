@@ -45,7 +45,7 @@ export const List = styled.ul`
     padding: 5px;
     margin: 2px;
 
-    // Only applies to li.red
+    // Only applies to li.grey
     &.grey {
       background: grey;
     }

@@ -10,6 +10,7 @@ export const UnscopedStyledComponent = createGlobalStyle`
 
 export default () => (
   <Fragment>
+    {/* Since the component only lives on this page, the global styles are only applied when this component renders */}
     <UnscopedStyledComponent />
     <p>
       This page uses createGlobalStyle to set styles on the body of the document

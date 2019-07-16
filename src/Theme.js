@@ -20,6 +20,7 @@ export const SECONDARY_THEME = {
 
 export const Wrapper = styled.div`
   padding: 20px;
+  // Use props.theme to set a rule depending on the selected theme
   background: ${props => props.theme.background};
   margin-bottom: 50px;
 `;
@@ -28,7 +29,7 @@ export const Link = styled.a`
   color: ${props => props.theme.linkColor};
 `;
 
-export const FakeNav = styled.nav`
+export const Nav = styled.nav`
   display: flex;
   flex-wrap: wrap;
   margin-right: 10px;
@@ -36,7 +37,7 @@ export const FakeNav = styled.nav`
   justify-content: space-around;
 `;
 
-export const FakeNavItem = styled(Link)`
+export const NavItem = styled(Link)`
   margin: 10px;
 `;
 
@@ -45,7 +46,8 @@ export const Content = styled.section``;
 export const CodeBlock = styled.pre`
   background: ${props => props.theme.codeBlockBackground};
   overflow: scroll;
-  font-size: 16px;
+  font-size: 18px;
+  padding: 12px;
 `;
 
 export default class Theming extends Component {
@@ -68,14 +70,16 @@ export default class Theming extends Component {
         <SecondaryButton onClick={this.changeTheme}>
           Switch style
         </SecondaryButton>
+        {/* Use the ThemeProvider component to inject your theme in all child components */}
         <ThemeProvider theme={this.state.currentTheme}>
           <Wrapper>
-            <FakeNav>
-              <FakeNavItem>Home</FakeNavItem>
-              <FakeNavItem>Pricing</FakeNavItem>
-              <FakeNavItem>About</FakeNavItem>
-              <FakeNavItem>Contact</FakeNavItem>
-            </FakeNav>
+            <Nav>
+              {/* Keeps the code readable */}
+              <NavItem>Home</NavItem>
+              <NavItem>Pricing</NavItem>
+              <NavItem>About</NavItem>
+              <NavItem>Contact</NavItem>
+            </Nav>
             <Content>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -85,14 +89,12 @@ export default class Theming extends Component {
                 ullamco laboris nisi ut aliquip ex ea commodo consequat.
               </p>
               <p>A block of code:</p>
-              <CodeBlock>{`
-if (!rowIsEmpty) {
+              <CodeBlock>{`if (!rowIsEmpty) {
     for (let j = 0; j < NUMBER_OF_COLUMNS; j++) {
         const horizontalWinner = connectedHorizontally(j, row);
             return horizontalWinner;
     }
-}
-                    `}</CodeBlock>
+}`}</CodeBlock>
               <p>
                 Duis aute irure dolor in reprehenderit in voluptate velit esse
                 cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
