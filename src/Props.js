@@ -7,23 +7,22 @@ const Question = styled.div`
   padding-top: 15px;
 `;
 
-const CorrectAnswer = styled.div`
+const Answer = styled.div`
   margin: 30px;
   padding: 20px;
   cursor: pointer;
   border-radius: 18px;
+`
+
+const CorrectAnswer = styled(Answer)`
   // The color of the border and the background depend on the value of the "correct" prop.
   border: 1px solid ${props => (props.correct ? 'green' : 'black')};
   background: ${props => props.correct && 'lightgreen'};
 `;
 
-const WrongAnswer = styled.div`
-  margin: 30px;
-  padding: 20px;
-  cursor: pointer;
-  border-radius: 18px;
+const WrongAnswer = styled(Answer)`
   border: 1px solid ${props => (props.wrong ? 'red' : 'black')};
-  background: ${props => props.wrong && 'rgb(255, 150, 150)'};
+  background: ${props => props.wrong === true && 'rgb(255, 150, 150)'};
 `;
 
 const Explanation = styled.p`
