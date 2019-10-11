@@ -28,6 +28,7 @@ export default class Home extends Component {
   render() {
     return (
       <LinkList>
+        <LinkItem to="/">Landing page</LinkItem>
         <LinkItem to="/simple">Simple component</LinkItem>
         <LinkItem to="/tags">HTML tags as base for components</LinkItem>
         <LinkItem to="/extend">Extending styles</LinkItem>
