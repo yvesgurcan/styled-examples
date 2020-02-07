@@ -3,6 +3,10 @@
     "version": "1.0.1",
     "description": "Styled Component Examples",
     "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/yvesgurcan/styled-examples"
+    },
     "scripts": {
         "clean": "rimraf dist",
         "build:webpack": "webpack --env.mode production --progress --color",
@@ -30,7 +34,7 @@
         "prop-types": "^15.6.1",
         "react": "^16.8.6",
         "react-dom": "^16.8.0",
-        "react-router-dom": "5.0.0",
+        "react-router-dom": "^5.1.2",
         "rimraf": "^2.6.2",
         "sass-loader": "^6.0.6",
         "serve": "^10.1.1",
@@ -42,6 +46,7 @@
         "webpack-bundle-analyzer": "^3.0.2",
         "webpack-cli": "^3.1.2",
         "webpack-dev-server": "^3.1.9",
-        "webpack-merge": "^4.1.4"
+        "webpack-merge": "^4.1.4",
+        "write-file-webpack-plugin": "^4.5.1"
     }
 }
