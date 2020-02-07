@@ -33,12 +33,8 @@ export default withRouter(({ location = {}, children }) => {
             <Title>
                 <div>Styled Components</div>
                 <div>
-                    <Link to={`/fr${targetWithoutLanguage}`}>
-                        <Flag src={frenchFlag} />
-                    </Link>
-                    <Link to={`/en${targetWithoutLanguage}`}>
-                        <Flag src={usFlag} />
-                    </Link>
+                    <Link to={`/fr${targetWithoutLanguage}`}>fr</Link> |{' '}
+                    <Link to={`/en${targetWithoutLanguage}`}>en</Link>
                 </div>
             </Title>
             {children}
