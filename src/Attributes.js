@@ -7,12 +7,17 @@ export const Checkbox = styled.input.attrs({ type: 'checkbox' })``;
 export const Radio = styled.input.attrs({ type: 'radio' })``;
 export const FileInput = styled.input.attrs({ type: 'file' })``;
 
-export default () => (
-  <Fragment>
-    <p>You can set default attributes to your styled components.</p>
-    <TextInput />
-    <Checkbox />
-    <Radio />
-    <FileInput />
-  </Fragment>
+const CONTENT = {
+    en: <p>You can set default attributes to your styled components.</p>,
+    fr: <p>Vous pouvez définir les attributs par défaut de vos composants.</p>
+};
+
+export default ({ language = 'en' }) => (
+    <Fragment>
+        {CONTENT[language]}
+        <TextInput />
+        <Checkbox />
+        <Radio />
+        <FileInput />
+    </Fragment>
 );
