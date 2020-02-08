@@ -33,7 +33,7 @@ const CONTENT = {
         description: (
             <p>
                 Cliquez sur les liens en bas de cette page pour voir des
-                examples qui utilisent <i>styled components</i>.
+                exemples qui utilisent <i>styled components</i>.
             </p>
         ),
         repo: (
